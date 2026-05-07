@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <title>HaiGorilla406 | Portfolio</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="nav">
+    <div class="logo">HaiGorilla406</div>
+    <nav>
+      <a href="#hero">Home</a>
+      <a href="#about">Über mich</a>
+      <a href="#projects">Projekte</a>
+      <a href="#contact">Kontakt</a>
+    </nav>
+    <div class="nav-right">
+      <a href="#contact" class="btn primary">Anfragen</a>
+    </div>
+  </header>
+
+  <main>
+    <!-- HERO -->
+    <section id="hero" class="hero">
+      <div class="hero-content">
+        <h1>HaiGorilla406</h1>
+        <pre class="code-snippet">
+const developer = {
+  name: "Hai",
+  role: "Full Stack Developer",
+  socials: []
+};
+
+init(developer);
+        </pre>
+        <p class="hero-subtitle">
+          Moderne Web‑ & Plugin‑Entwicklung mit Stil, Präzision und Geschwindigkeit.
+        </p>
+        <div class="hero-stats">
+          <span>5+ Jahre Erfahrung</span>
+          <span>20+ Projekte</span>
+          <span>Scroll ↓</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section id="about" class="section">
+      <h2>Über mich</h2>
+
+      <div class="about-grid">
+        <div class="card">
+          <h4>👤 Wer bin ich?</h4>
+          <p>Ich bin Hai, ein Developer aus Deutschland.</p>
+        </div>
+
+        <div class="card">
+          <h4>💻 Was mache ich?</h4>
+          <p>Ich entwickle Websites, Plugins und moderne Web‑Apps.</p>
+        </div>
+
+        <div class="card">
+          <h4>🎯 Vision</h4>
+          <p>Saubere, schnelle und moderne digitale Erlebnisse.</p>
+        </div>
+
+        <div class="card">
+          <h4>🔥 Skills</h4>
+          <p>Java, JS, HTML, CSS, Maven, MySQL uvm.</p>
+        </div>
+      </div>
+
+      <div class="services">
+        <h3>🚀 Individuelle Websites</h3>
+        <p>
+          Du brauchst eine moderne Website? Ich baue dir eine komplett individuelle Seite.
+        </p>
+      </div>
+    </section>
+
+    <!-- PROJECTS -->
+    <section id="projects" class="section">
+      <h2>Projekte</h2>
+
+      <div class="projects-grid">
+        <article class="project-card">
+          <h3>Aera Craft</h3>
+          <p>Ein Minecraft‑Konzept mit vier Epochen und dynamischem Gameplay.</p>
+          <p class="project-meta">Minecraft · Game Design</p>
+        </article>
+
+        <article class="project-card">
+          <h3>Hai Store</h3>
+          <p>Ein moderner Web‑Shop mit deinem typischen Blau‑Violett‑Design.</p>
+          <p class="project-meta">Next.js · Tailwind</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact" class="section contact">
+      <h2>Kontakt</h2>
+      <p>Du möchtest eine Website oder ein Projekt anfragen? Schreib mir!</p>
+
+      <form class="contact-form" id="contactForm">
+        <div class="form-row">
+          <input type="text" name="name" placeholder="Dein Name" required />
+          <input type="email" name="email" placeholder="Deine E-Mail" required />
+        </div>
+        <textarea name="message" rows="5" placeholder="Deine Nachricht" required></textarea>
+        <button type="submit" class="btn primary">Senden</button>
+      </form>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <span>© 2026 HaiGorilla406</span>
+    <span>Besuche: <span id="visitCounter">...</span></span>
+  </footer>
+
+  <script src="main.js"></script>
+</body>
+</html>
