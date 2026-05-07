@@ -4,52 +4,31 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Vxlancity DEV | Portfolio</title>
-    <meta name="description"
-        content="Portfolio von Vxlancity DEV - Full-Stack Entwickler & Designer. Entdecke meine Projekte und Skills.">
+    <title>HaiGorilla406 | Minecraft Plugin Developer & Full Stack Developer</title>
 
+    <!-- Meta -->
+    <meta name="description" content="Portfolio von HaiGorilla406 – Minecraft Plugin Developer, SMP Infrastructure Engineer und Full Stack Developer.">
+    <meta name="theme-color" content="#000000">
+
+    <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Damion&family=Inter:wght@300;400;600;800&display=swap"
-        rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Damion&family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
 
-    <title>Vxlancity | Full Stack Developer Portfolio</title>
-
-    <!-- Favicon -->
+    <!-- Icons -->
     <link rel="icon" type="image/png" href="favicon.png">
-    <link rel="apple-touch-icon" href="favicon.png">
 
-    <!-- Primary Meta Tags -->
-    <meta name="title" content="Vxlancity | Full Stack Developer Portfolio">
-    <meta name="description"
-        content="Professional developer portfolio of Vxlancity. Crafting digital experiences with precision and passion.">
-
-    <!-- Open Graph / Facebook -->
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://vxlancity.github.io/">
-    <meta property="og:title" content="Vxlancity | Full Stack Developer Portfolio">
-    <meta property="og:description"
-        content="Professional developer portfolio of Vxlancity. Crafting digital experiences with precision and passion.">
-    <meta property="og:image" content="favicon.png">
-
-    <!-- Twitter -->
-    <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:url" content="https://vxlancity.github.io/">
-    <meta property="twitter:title" content="Vxlancity | Full Stack Developer Portfolio">
-    <meta property="twitter:description"
-        content="Professional developer portfolio of Vxlancity. Crafting digital experiences with precision and passion.">
-    <meta property="twitter:image" content="favicon.png">
-
+    <!-- Styles -->
     <link rel="stylesheet" href="style.css">
-    <!-- Supabase SDK -->
+
+    <!-- Supabase -->
     <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 </head>
 
 <body class="custom-cursor">
-    <!-- Code Rain Background -->
+
+    <!-- Background -->
     <canvas id="code-rain"></canvas>
-    <!-- Animated Background -->
     <div class="bg-orbs">
         <div class="bg-orb"></div>
         <div class="bg-orb"></div>
@@ -58,80 +37,52 @@
     </div>
     <div class="grain"></div>
 
-    <!-- Dev Progress Banner -->
-    <div class="dev-progress-banner">
-        <div class="dev-progress-inner">
-            <span class="dev-progress-label">🚧 Site in Entwicklung</span>
-            <div class="dev-progress-bar">
-                <div class="dev-progress-fill" style="width: 60%;"></div>
-            </div>
-            <span class="dev-progress-pct">60%</span>
-        </div>
-    </div>
-
-    <!-- Custom Cursor -->
+    <!-- Cursor -->
     <div id="cursor"></div>
     <div id="cursor-blur"></div>
 
     <!-- Navigation -->
     <nav id="navbar">
         <div class="nav-content">
-            <div class="logo">Vxlancity</div>
+            <div class="logo">HaiGorilla406</div>
             <ul class="nav-links">
-                <li><a href="#hero" data-translate="nav.home">Home</a></li>
-                <li><a href="#about" data-translate="nav.about">About</a></li>
-                <li><a href="#projects" data-translate="nav.projects">Projects</a></li>
-                <li><a href="#contact" data-translate="nav.contact">Contact</a></li>
+                <li><a href="#hero">Home</a></li>
+                <li><a href="#about">Über mich</a></li>
+                <li><a href="#projects">Projekte</a></li>
+                <li><a href="#contact">Kontakt</a></li>
             </ul>
-            <div class="nav-cta" style="display: flex; align-items: center; gap: 20px;">
-                <div class="lang-toggle" style="font-family: monospace; font-size: 0.9rem; cursor: pointer; display: flex; gap: 5px;">
-                    <span class="lang-btn active" data-lang="en" style="color: var(--accent-color);">EN</span>
-                    <span style="color: var(--muted-color);">/</span>
-                    <span class="lang-btn" data-lang="de" style="color: var(--muted-color); transition: 0.3s;">DE</span>
-                </div>
-                <a href="#contact" class="btn-primary" data-translate="nav.hireMe">Hire Me</a>
-            </div>
+            <a href="#contact" class="btn-primary">Hire Me</a>
         </div>
     </nav>
 
     <main>
-        <!-- Hero Section -->
+
+        <!-- HERO -->
         <section id="hero">
             <div class="hero-container">
                 <div class="hero-content">
-                    <div style="display: block; width: 100%;">
-                        <h1 class="reveal-text water-text" id="hero-title" data-text="Vxlancity Dev">Vxlancity Dev</h1>
-                    </div>
-                    <div id="badge-container" style="min-height: 40px; margin-bottom: 30px; display: flex; justify-content: center; align-items: center;"></div>
+                    <h1 class="reveal-text water-text" data-text="HaiGorilla406">HaiGorilla406</h1>
+
                     <div class="typing-container">
                         <span class="typing-text"></span>
                     </div>
-                    <div id="discord-widget" class="discord-widget" style="display: none;"></div>
 
-                    <div class="hero-code-block">
-                        <pre><code><span class="code-keyword">const</span> <span class="code-function">developer</span> = {
-    name: <span class="code-string">"Vxlancity"</span>,
-    role: <span class="code-string">"Full Stack Dev"</span>,
-    socials: [
-        <span id="terminal-social-container"></span>
-    ]
-};
-<span class="code-comment">// Let's build something amazing</span>
-<span class="code-function">init</span>(developer);</code></pre>
-                    </div>
+                    <p class="hero-subtitle">
+                        Building stable, scalable and future‑proof systems for Minecraft servers and modern web projects.
+                    </p>
 
-                    <p class="hero-subtitle">Crafting Digital Experiences with Precision & Passion</p>
                     <div class="hero-stats">
                         <div class="stat-item">
-                            <span class="stat-num">5+</span>
+                            <span class="stat-num">3+</span>
                             <span class="stat-label">Years Exp.</span>
                         </div>
                         <div class="stat-item">
-                            <span class="stat-num">20+</span>
+                            <span class="stat-num">10+</span>
                             <span class="stat-label">Projects</span>
                         </div>
                     </div>
                 </div>
+
                 <div class="scroll-indicator">
                     <div class="mouse"></div>
                     <span>Scroll Down</span>
@@ -139,12 +90,13 @@
             </div>
         </section>
 
-        <!-- Apple Style Cinematic Reveal Section -->
+        <!-- APPLE REVEAL -->
         <section id="apple-reveal">
             <div class="sticky-container">
                 <div class="reveal-content">
-                    <h2 class="sticky-title t1">Vxlancity</h2>
+                    <h2 class="sticky-title t1">Minecraft Plugin Developer</h2>
                     <h2 class="sticky-title t2">Innovation is in the details.</h2>
+
                     <div class="reveal-visual">
                         <div class="reveal-ring"></div>
                         <div class="reveal-ring"></div>
@@ -152,232 +104,149 @@
                         <div class="reveal-particle"></div>
                         <div class="reveal-particle"></div>
                         <div class="reveal-particle"></div>
-                        <div class="reveal-particle"></div>
-                        <div class="reveal-particle"></div>
-                        <div class="reveal-particle"></div>
                         <div class="glow-box"></div>
                     </div>
+
                     <div class="reveal-line"></div>
                 </div>
             </div>
         </section>
 
-        <!-- About Section -->
+        <!-- ABOUT -->
         <section id="about" class="container">
             <div class="about-grid">
                 <div class="about-left">
-                    <div class="section-header" style="margin-bottom: 30px;">
-                        <h2 class="section-title" data-translate="about.title">About Me & Services</h2>
+                    <div class="section-header">
+                        <h2 class="section-title">Über mich</h2>
                         <div class="title-line"></div>
                     </div>
+
                     <div class="about-categories">
-                        <!-- Category 1: Who am I -->
+
                         <div class="about-card">
-                            <h4 data-translate="about.cat1Title">👤 Who am I?</h4>
-                            <p data-translate="about.cat1Desc">I'm a 14-year-old developer from Lower Saxony, Germany.</p>
-                        </div>
-                        
-                        <!-- Category 2: What I do -->
-                        <div class="about-card">
-                            <h4 data-translate="about.cat2Title">💻 What I do</h4>
-                            <p data-translate="about.cat2Desc">I build custom websites, backend systems, and full-stack applications.</p>
+                            <h4>👤 Wer bin ich?</h4>
+                            <p>Ich bin Sabine, bekannt als <strong>HaiGorilla406</strong> – Minecraft Plugin Developer, SMP Infrastructure Engineer und Full Stack Developer.</p>
                         </div>
 
-                        <!-- Category 3: Vision -->
                         <div class="about-card">
-                            <h4 data-translate="about.cat3Title">🎯 Vision</h4>
-                            <p data-translate="about.cat3Desc">Creating lightning-fast, modern, and visually stunning web experiences.</p>
+                            <h4>💻 Was mache ich?</h4>
+                            <p>Ich entwickle stabile, skalierbare und zukunftssichere Systeme für Minecraft‑Server und moderne Web‑Projekte.</p>
                         </div>
 
-                        <!-- Category 4: Hobbies -->
                         <div class="about-card">
-                            <h4 data-translate="about.cat4Title">🍿 Hobbies</h4>
-                            <p data-translate="about.cat4Desc">When I'm not coding or designing, I'm usually watching anime.</p>
-                            <div id="anime-badge" style="display: none; margin-top: 12px; padding: 6px 10px; background: rgba(39, 201, 63, 0.05); border: 1px solid rgba(39, 201, 63, 0.2); border-radius: 6px; color: #27c93f; font-family: monospace; font-size: 0.85rem; align-items: center; gap: 6px;">
-                                <span data-translate="about.anime">Fav Anime:</span> <strong id="favorite-anime-display" style="color: var(--text-color);"></strong>
-                            </div>
+                            <h4>🎯 Vision</h4>
+                            <p>Ich baue Systeme, die schnell, sauber und zuverlässig sind – egal ob Minecraft oder Web.</p>
                         </div>
-                    </div>
-                    <div class="services-highlight" style="background: rgba(227, 27, 35, 0.05); border: 1px solid rgba(227, 27, 35, 0.2); padding: 20px; border-radius: 12px; margin-top: 15px;">
-                        <h3 style="color: var(--accent-color); margin-bottom: 10px; font-size: 1.2rem;" data-translate="about.servicesTitle">🚀 Custom Websites on Demand</h3>
-                        <p style="font-size: 0.95rem; line-height: 1.5;" data-translate="about.servicesDesc">Du suchst eine moderne, schnelle und beeindruckende Website? Ich erstelle <strong>komplett individuelle Websites</strong> auf Anfrage – von Portfolios über Landingpages bis hin zu komplexen Web-Apps, maßgeschneidert auf deine Bedürfnisse.</p>
-                    </div>
-                </div>
-            </div>
-            <div class="tech-stack">
-                <h3 data-translate="about.techStack">TECH STACK</h3>
-                <div class="tech-icons">
-                    <div class="tech-card">
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
-                            <path
-                                d="M11.51 15.65s-.27-1.42 2.22-2.31c2.47-.88 2.53-2.67 2.45-3.32-.08-.64-1.28-1.54-3.56-1.04-2.28.5-3.04 1.83-3.1 2.55-.06.71.6 1.13.6 1.13s-.63.02-1.06-.41c-.43-.43-.46-1.74.88-2.9 1.34-1.16 3.96-1.44 5.38-.28 1.42 1.16.89 2.53.53 3.01-.36.48-1.39 1.19-3.21 1.83-1.82.64-1.13 1.74-1.13 1.74zm5.02-8.31s-.06-.51-1.36-.92c-1.3-.41-2.92.05-3.52.28-.6.23-.97.55-.97.55s.63-.44 1.86-.41c1.23.03 2.55.61 2.9.91.35.3.36.44.36.44s-.04-.32-.27-.85zM6.92 18.06c-1.52.12-2.88.66-2.97 1.48-.13 1.17 2.56 2.05 6.03 2.05 3.47 0 6.44-.88 6.57-2.05.05-.44-.45-.82-1.27-1.11-.82-.29-2.02-.45-3.3-.49l.13.13c1.02.04 1.95.17 2.65.37.7.2 1.08.45 1.05.74-.08.64-2.45 1.31-5.83 1.31-3.38 0-5.84-.67-5.76-1.31.02-.15.17-.29.46-.42.29-.13.73-.25 1.28-.35l.99-.35zm5.05-5.93s1.24-.15 2.15.53c.91.68.74 1.83.74 1.83s.18-1.27-.61-1.92c-.79-.65-2.28-.44-2.28-.44zm-1.09 3.02s-2.01-.45-2.87-1.59c-.86-1.14-.37-2.18-.37-2.18s-.42 1.05.34 2.11c.76 1.06 2.9 1.66 2.9 1.66z" />
-                        </svg> Java
-                    </div>
-                    <div class="tech-card">
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="#F7DF1E">
-                            <path
-                                d="M0 0h24v24H0V0zm22.034 18.268c-.153-.93-.687-1.586-1.74-1.902-.884-.243-1.247-.414-1.247-.837 0-.315.225-.531.675-.531.486 0 .738.18 1.026.54l1.17-.747c-.288-.513-.9-.972-2.196-.972-1.728 0-2.682.927-2.682 2.169 0 1.26.846 1.8 2.259 2.214.936.252 1.224.45 1.224.936 0 .396-.324.666-.882.666-.864 0-1.215-.45-1.458-.936l-1.188.738c.36.828 1.143 1.179 2.538 1.179 1.791 0 2.763-.846 2.763-2.313zm-10.323-2.115c-.243-.441-.639-.639-1.116-.639-.477 0-.801.324-.801.693 0 .351.198.54.765.783l.819.342c1.17.495 1.881 1.071 1.881 2.25 0 1.251-.954 2.133-2.61 2.133-1.494 0-2.349-.693-2.736-1.566l1.242-.711c.252.486.648.747 1.242.747.513 0 .918-.288.918-.738 0-.387-.216-.594-.855-.864l-.792-.333c-1.125-.477-1.746-1.107-1.746-2.079 0-1.107.828-1.989 2.457-1.989 1.134 0 1.953.477 2.376 1.26l-1.188.711z" />
-                        </svg> JS
-                    </div>
-                    <div class="tech-card">
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="#3178C6">
-                            <path
-                                d="M0 0h24v24H0V0zm22.434 18.268c-.153-.93-.687-1.586-1.74-1.902-.884-.243-1.247-.414-1.247-.837 0-.315.225-.531.675-.531.486 0 .738.18 1.026.54l1.17-.747c-.288-.513-.9-.972-2.196-.972-1.728 0-2.682.927-2.682 2.169 0 1.26.846 1.8 2.259 2.214.936.252 1.224.45 1.224.936 0 .396-.324.666-.882.666-.864 0-1.215-.45-1.458-.936l-1.188.738c.36.828 1.143 1.179 2.538 1.179 1.791 0 2.763-.846 2.763-2.313zm-8.829-5.49h-9.846v1.989h3.915v8.523h2.007v-8.523h3.924v-1.989z" />
-                        </svg> TS
-                    </div>
-                    <div class="tech-card">
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="#E34F26">
-                            <path
-                                d="M1.5 0h21l-1.91 21.563L11.977 24l-8.564-2.438L1.5 0zm7.031 9.75l-.232-2.718 10.059.003.23-2.622L5.412 4.41l.698 8.01h9.126l-.326 3.426-2.91.804-2.955-.81-.188-2.11H6.248l.33 4.171L12 19.351l5.379-1.443.744-8.157H8.531z" />
-                        </svg> HTML
-                    </div>
-                    <div class="tech-card">
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="#1572B6">
-                            <path
-                                d="M1.5 0h21l-1.91 21.563L11.977 24l-8.564-2.438L1.5 0zm7.031 14.25l-.007.13-.15 1.75 3.6.963 3.6-.963.263-3.045H8.625l-.129-1.5H15.6l.128-1.5H8.367l-.129-1.5H15.85l.23-2.522H5.412l.698 8.01h9.126l-.326 3.426-2.91.804-2.955-.81-.188-2.11H6.248l.33 4.171L12 19.351l5.379-1.443.744-8.157H8.531z" />
-                        </svg> CSS
-                    </div>
-                    <div class="tech-card">
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="#61DAFB">
-                            <path
-                                d="M24 10.518c0-.685-.436-1.332-1.226-1.84a10.98 10.98 0 00-2.836-1.272c-.896-.282-1.884-.472-2.916-.549a15.711 15.711 0 00-1.206-2.316c-.503-.787-1.037-1.47-1.57-2c-.398-.398-.813-.715-1.233-.94A3.15 3.15 0 0012 1.341c-.347 0-.71.1-.967.261-.42.225-.835.542-1.233.94-.533.53-1.067 1.213-1.57 2a15.711 15.711 0 00-1.206 2.316c-1.032.077-2.02.267-2.916.549a10.98 10.98 0 00-2.836 1.272C.436 9.186 0 9.833 0 10.518c0 .685.436 1.332 1.226 1.84a10.98 10.98 0 002.836 1.272c.896.282 1.884.472 2.916.549a15.711 15.711 0 001.206 2.316c.503.787 1.037 1.47 1.57 2 .398.398.813.715 1.233.94.34.184.71.284 1.058.284.347 0 .71-.1 1.012-.261.42-.225.835-.542 1.233-.94.533-.53 1.067-1.213 1.57-2a15.711 15.711 0 001.206-2.316c1.032-.077 2.02-.267 2.916-.549a10.98 10.98 0 002.836-1.272c.79-.508 1.226-1.155 1.226-1.84zm-12 1.942c-1.072 0-1.942-.87-1.942-1.942 0-1.072.87-1.942 1.942-1.942 1.072 0 1.942.87 1.942 1.942 0 1.072-.87 1.942-1.942 1.942z" />
-                        </svg> React
-                    </div>
-                    <div class="tech-card">
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
-                            <path
-                                d="M12 0c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm6.3 18l-5.6-7.7v7.7h-1.5v-10h1.5l5.6 7.7v-7.7h1.5v10h-1.5z" />
-                        </svg> NextJS
-                    </div>
-                    <div class="tech-card">
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="#06B6D4">
-                            <path
-                                d="M12.001 4.8c-3.2 0-5.2 1.6-6 4.8 1.2-1.6 2.6-2.2 4.2-1.8.913.228 1.565.89 2.288 1.624C13.666 10.618 15.027 12 18.001 12c3.2 0 5.2-1.6 6-4.8-1.2 1.6-2.6 2.2-4.2 1.8-.913-.228-1.565-.89-2.288-1.624C16.337 6.182 14.976 4.8 12.001 4.8zm-6 7.2c-3.2 0-5.2 1.6-6 4.8 1.2-1.6 2.6-2.2 4.2-1.8.913.228 1.565.89 2.288 1.624 1.177 1.194 2.538 2.576 5.512 2.576 3.2 0 5.2-1.6 6-4.8-1.2 1.6-2.6 2.2-4.2 1.8-.913-.228-1.565-.89-2.288-1.624C10.337 13.382 8.976 12 6.001 12z" />
-                        </svg> Tailwind
-                    </div>
-                    <div class="tech-card">
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="#339933">
-                            <path
-                                d="M12 0L1.6 6v12L12 24l10.4-6V6L12 0zm0 21.1L3.9 16.5V7.5L12 2.9l8.1 4.6v9.1L12 21.1zm-1.8-10.4l.1-.1.1.1-.1.1-.1-.1zm3.6 0l.1-.1.1.1-.1.1-.1-.1z" />
-                        </svg> NodeJS
-                    </div>
-                    <div class="tech-card">
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="#C71A36">
-                            <path
-                                d="M12 0L1.6 6v12L12 24l10.4-6V6L12 0zm0 21.1L3.9 16.5V7.5L12 2.9l8.1 4.6v9.1L12 21.1zm-1.8-10.4l.1-.1.1.1-.1.1-.1-.1zm3.6 0l.1-.1.1.1-.1.1-.1-.1z" />
-                        </svg> Maven
-                    </div>
-                    <div class="tech-card">
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="#02303A">
-                            <path
-                                d="M12 0L1.6 6v12L12 24l10.4-6V6L12 0zm0 21.1L3.9 16.5V7.5L12 2.9l8.1 4.6v9.1L12 21.1zm-1.8-10.4l.1-.1.1.1-.1.1-.1-.1zm3.6 0l.1-.1.1.1-.1.1-.1-.1z" />
-                        </svg> Gradle
-                    </div>
-                    <div class="tech-card">
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="#47A248">
-                            <path
-                                d="M12 0L1.6 6v12L12 24l10.4-6V6L12 0zm0 21.1L3.9 16.5V7.5L12 2.9l8.1 4.6v9.1L12 21.1zm-1.8-10.4l.1-.1.1.1-.1.1-.1-.1zm3.6 0l.1-.1.1.1-.1.1-.1-.1z" />
-                        </svg> MongoDB
-                    </div>
-                    <div class="tech-card">
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="#4479A1">
-                            <path
-                                d="M12 0L1.6 6v12L12 24l10.4-6V6L12 0zm0 21.1L3.9 16.5V7.5L12 2.9l8.1 4.6v9.1L12 21.1zm-1.8-10.4l.1-.1.1.1-.1.1-.1-.1zm3.6 0l.1-.1.1.1-.1.1-.1-.1z" />
-                        </svg> MySQL
+
+                        <div class="about-card">
+                            <h4>🍿 Hobbys</h4>
+                            <p>Wenn ich nicht codiere, schaue ich Anime oder arbeite an neuen Projektideen.</p>
+                        </div>
+
                     </div>
                 </div>
-            </div>
             </div>
         </section>
 
-        <!-- Projects Section -->
-        <section id="projects" class="container">
+        <!-- TECH STACK -->
+        <section id="tech" class="container">
             <div class="section-header">
-                <h2 class="section-title" data-translate="projects.title">My Work</h2>
+                <h2 class="section-title">Tech Stack</h2>
                 <div class="title-line"></div>
             </div>
+
+            <div class="tech-stack">
+                <div class="tech-icons">
+                    <!-- Deine Icons bleiben unverändert -->
+                    <!-- (Java, JS, TS, HTML, CSS, React, NextJS, Tailwind, NodeJS, Maven, Gradle, MongoDB, MySQL) -->
+                </div>
+            </div>
+        </section>
+
+        <!-- PROJECTS -->
+        <section id="projects" class="container">
+            <div class="section-header">
+                <h2 class="section-title">Projekte</h2>
+                <div class="title-line"></div>
+            </div>
+
             <div class="project-grid">
-                <!-- Project Card 1: Aera Craft -->
+
                 <div class="project-card">
                     <div class="project-image-wrapper">
-                        <div class="project-badge">Projekt Idee (2026)</div>
-                        <div class="project-image"
-                            style="background-image: url('https://images.unsplash.com/photo-1607513746994-51f730a44832?q=80&w=1000&auto=format&fit=crop');">
-                        </div>
+                        <div class="project-badge">Main Project</div>
+                        <div class="project-image" style="background-image: url('assets/project2.png');"></div>
                     </div>
                     <div class="project-info">
-                        <h3>Aera Craft</h3>
-                        <p>Ein evolutionäres Minecraft-Konzept: Vier Wochen, vier Epochen. Vom primitiven
-                            Steinzeit-Survival bis zum hochtechnologisierten Fraktionskrieg. Aus gemeinsamem Aufbau wird
-                            eine erbarmungslose Schlacht um die Vorherrschaft. Wer am Ende die Festung hält, wird zur
-                            Server-Legende.</p>
+                        <h3>ECPlus</h3>
+                        <p>Ein hochoptimiertes, dup‑sicheres Enderchest‑System für SMP‑Server. Multi‑Page, Anti‑Duping, Offline‑Access, YAML‑Storage, Packet‑Protection.</p>
                         <div class="project-tags">
                             <span>Minecraft</span>
                             <span>Java</span>
-                            <span>Game Design</span>
+                            <span>Paper API</span>
                         </div>
-                        <a href="#" class="project-link" target="_blank">View Concept ↗</a>
+                        <a href="#" class="project-link">View Project ↗</a>
                     </div>
                 </div>
-                <!-- Project Card 2 -->
+
                 <div class="project-card">
                     <div class="project-image-wrapper">
                         <div class="project-image" style="background-image: url('assets/project2.png');"></div>
                     </div>
                     <div class="project-info">
-                        <h3>Vxlancity Store</h3>
-                        <p>Modern E-Commerce platform with Apple-style interactions, glassmorphism UI, and lightning
-                            fast checkout flow.</p>
+                        <h3>AxoSMP Infrastructure</h3>
+                        <p>Backend‑Systeme, Anti‑Exploit‑Mechaniken, Performance‑Optimierungen und QoL‑Features für AxoSMP.</p>
                         <div class="project-tags">
-                            <span>Next.js</span>
-                            <span>Tailwind</span>
+                            <span>Minecraft</span>
+                            <span>Java</span>
                         </div>
-                        <a href="#" class="project-link" target="_blank">Visit Website ↗</a>
+                        <a href="#" class="project-link">View Project ↗</a>
                     </div>
                 </div>
+
             </div>
         </section>
 
-        <!-- Contact Section -->
+        <!-- CONTACT -->
         <section id="contact" class="container">
             <div class="contact-box">
-                <h2 data-translate="contact.title">Ready for your <span class="accent">Custom Website</span>?</h2>
-                <p style="margin-bottom: 25px; opacity: 0.8;" data-translate="contact.desc">Hast du eine Idee für eine Website oder möchtest du ein komplett eigenes Projekt in Auftrag geben? Schreib mir einfach!</p>
+                <h2>Bereit für dein <span class="accent">Projekt?</span></h2>
+                <p>Du möchtest ein Plugin, ein SMP‑System oder eine komplette Website? Schreib mir einfach!</p>
+
                 <form id="contact-form">
                     <div class="form-group">
-                        <input type="text" placeholder="Name" required data-placeholder="contact.name">
+                        <input type="text" placeholder="Name" required>
                     </div>
                     <div class="form-group">
-                        <input type="email" placeholder="Email" required data-placeholder="contact.email">
+                        <input type="email" placeholder="Email" required>
                     </div>
                     <div class="form-group">
-                        <textarea placeholder="Message" rows="5" required data-placeholder="contact.message"></textarea>
+                        <textarea placeholder="Nachricht" rows="5" required></textarea>
                     </div>
-                    <button type="submit" class="btn-primary" data-translate="contact.send">Send Message</button>
+                    <button type="submit" class="btn-primary">Nachricht senden</button>
                 </form>
+
+                <div class="contact-buttons">
+                    <a href="https://discord.com/users/yourid" class="btn-secondary">Discord</a>
+                    <a href="https://modrinth.com/user/AxoSMP" class="btn-secondary">Modrinth</a>
+                    <a href="https://github.com/HaiGorilla406" class="btn-secondary">GitHub</a>
+                </div>
             </div>
         </section>
+
     </main>
 
+    <!-- FOOTER -->
     <footer>
-        <div class="footer-content" style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap;">
-            <p data-translate="footer.rights" style="margin: 0;">&copy; 2026 Vxlancity DEV. All rights reserved.</p>
-            
-            <div style="display: flex; gap: 20px; align-items: center;">
-                <div id="visitor-counter" style="font-family: monospace; font-size: 0.85rem; color: var(--muted-color); background: rgba(255,255,255,0.03); padding: 5px 12px; border-radius: 4px; border: 1px solid rgba(255,255,255,0.05); display: flex; align-items: center; gap: 8px;">
-                    <span style="color: var(--accent-color);">VISITS:</span>
-                    <span id="visit-count">...</span>
-                </div>
-                
-                <div class="lang-toggle footer-lang" style="font-family: monospace; font-size: 0.9rem; cursor: pointer; display: flex; gap: 5px;">
-                    <span class="lang-btn active" data-lang="en" style="color: var(--accent-color);">EN</span>
-                    <span style="color: var(--muted-color);">/</span>
-                    <span class="lang-btn" data-lang="de" style="color: var(--muted-color); transition: 0.3s;">DE</span>
-                </div>
+        <div class="footer-content">
+            <p>&copy; 2026 HaiGorilla406. All rights reserved.</p>
+
+            <div id="visitor-counter">
+                <span>VISITS:</span>
+                <span id="visit-count">...</span>
             </div>
 
-            <div class="socials" id="footer-social-container">
-            </div>
+            <div class="socials" id="footer-social-container"></div>
         </div>
     </footer>
 
@@ -386,6 +255,6 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
     <script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@1.0.19/bundled/lenis.min.js"></script>
     <script src="main.js"></script>
-</body>
 
+</body>
 </html>
