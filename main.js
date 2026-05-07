@@ -1,5 +1,3 @@
-// main.js
-
 document.addEventListener("DOMContentLoaded", () => {
     initCursor();
     initCodeRain();
@@ -9,10 +7,12 @@ document.addEventListener("DOMContentLoaded", () => {
     initContactForm();
     initVisitorCounter();
     initFooterSocials();
+    initLanguageSwitcher();
 });
 
-/* Cursor */
-
+/* ===========================
+   CUSTOM CURSOR
+=========================== */
 function initCursor() {
     const cursor = document.getElementById("cursor");
     const blur = document.getElementById("cursor-blur");
@@ -20,14 +20,14 @@ function initCursor() {
     if (!cursor || !blur) return;
 
     window.addEventListener("mousemove", (e) => {
-        const { clientX, clientY } = e;
-        cursor.style.transform = `translate(${clientX}px, ${clientY}px)`;
-        blur.style.transform = `translate(${clientX}px, ${clientY}px)`;
+        cursor.style.transform = `translate(${e.clientX}px, ${e.clientY}px)`;
+        blur.style.transform = `translate(${e.clientX}px, ${e.clientY}px)`;
     });
 }
 
-/* Code Rain */
-
+/* ===========================
+   CODE RAIN BACKGROUND
+=========================== */
 function initCodeRain() {
     const canvas = document.getElementById("code-rain");
     if (!canvas) return;
@@ -50,18 +50,13 @@ function initCodeRain() {
         ctx.fillStyle = "#27c93f";
         ctx.font = "14px monospace";
 
-        for (let i = 0; i < drops.length; i++) {
-            const text = chars.charAt(Math.floor(Math.random() * chars.length));
-            const x = i * 16;
-            const y = drops[i] * 16;
+        drops.forEach((y, i) => {
+            const text = chars[Math.floor(Math.random() * chars.length)];
+            ctx.fillText(text, i * 16, y * 16);
 
-            ctx.fillText(text, x, y);
-
-            if (y > height && Math.random() > 0.96) {
-                drops[i] = 0;
-            }
+            if (y * 16 > height && Math.random() > 0.96) drops[i] = 0;
             drops[i]++;
-        }
+        });
 
         requestAnimationFrame(draw);
     }
@@ -71,8 +66,9 @@ function initCodeRain() {
     window.addEventListener("resize", resize);
 }
 
-/* Typing */
-
+/* ===========================
+   TYPING EFFECT
+=========================== */
 function initTyping() {
     const el = document.querySelector(".typing-text");
     if (!el) return;
@@ -90,11 +86,10 @@ function initTyping() {
 
     function tick() {
         const current = roles[idx];
+
         if (!deleting) {
             charIdx++;
-            if (charIdx === current.length + 3) {
-                deleting = true;
-            }
+            if (charIdx === current.length + 3) deleting = true;
         } else {
             charIdx--;
             if (charIdx === 0) {
@@ -103,23 +98,20 @@ function initTyping() {
             }
         }
 
-        el.textContent = current.slice(0, Math.max(charIdx, 0));
-        const delay = deleting ? 60 : 90;
-        setTimeout(tick, delay);
+        el.textContent = current.slice(0, charIdx);
+        setTimeout(tick, deleting ? 60 : 90);
     }
 
     tick();
 }
 
-/* Lenis Smooth Scroll */
-
+/* ===========================
+   LENIS SMOOTH SCROLL
+=========================== */
 function initLenis() {
     if (typeof Lenis === "undefined") return;
 
-    const lenis = new Lenis({
-        smooth: true,
-        lerp: 0.12
-    });
+    const lenis = new Lenis({ smooth: true, lerp: 0.12 });
 
     function raf(time) {
         lenis.raf(time);
@@ -129,36 +121,23 @@ function initLenis() {
     requestAnimationFrame(raf);
 }
 
-/* GSAP Animations */
-
+/* ===========================
+   GSAP ANIMATIONS
+=========================== */
 function initGsap() {
     if (typeof gsap === "undefined" || typeof ScrollTrigger === "undefined") return;
 
     gsap.registerPlugin(ScrollTrigger);
 
-    gsap.from("#hero .hero-content", {
+    gsap.from("#hero .hero-container", {
         opacity: 0,
         y: 40,
         duration: 1,
         ease: "power3.out"
     });
 
-    gsap.from(".section-header", {
-        scrollTrigger: {
-            trigger: ".section-header",
-            start: "top 80%"
-        },
-        opacity: 0,
-        y: 20,
-        duration: 0.6,
-        stagger: 0.2
-    });
-
     gsap.from(".about-card", {
-        scrollTrigger: {
-            trigger: "#about",
-            start: "top 75%"
-        },
+        scrollTrigger: { trigger: "#about", start: "top 75%" },
         opacity: 0,
         y: 20,
         duration: 0.5,
@@ -166,66 +145,31 @@ function initGsap() {
     });
 
     gsap.from(".project-card", {
-        scrollTrigger: {
-            trigger: "#projects",
-            start: "top 75%"
-        },
+        scrollTrigger: { trigger: "#projects", start: "top 75%" },
         opacity: 0,
         y: 24,
         duration: 0.6,
         stagger: 0.15
     });
-
-    // Apple Reveal
-    const reveal = document.querySelector("#apple-reveal");
-    if (reveal) {
-        gsap.to(".reveal-ring", {
-            scrollTrigger: {
-                trigger: "#apple-reveal",
-                start: "top 80%",
-                end: "bottom top",
-                scrub: true
-            },
-            rotation: 360,
-            stagger: 0.2
-        });
-
-        gsap.to(".glow-box", {
-            scrollTrigger: {
-                trigger: "#apple-reveal",
-                start: "top 80%",
-                end: "bottom top",
-                scrub: true
-            },
-            boxShadow: "0 0 60px rgba(39, 201, 63, 0.7)"
-        });
-    }
 }
 
-/* Contact Form */
-
+/* ===========================
+   CONTACT FORM
+=========================== */
 function initContactForm() {
     const form = document.getElementById("contact-form");
     if (!form) return;
 
     form.addEventListener("submit", (e) => {
         e.preventDefault();
-
-        const data = new FormData(form);
-        const name = data.get("name") || data.get("Name") || "";
-        const email = data.get("email") || "";
-        const message = data.get("message") || data.get("Nachricht") || "";
-
-        // Hier könntest du Supabase / Backend einbauen.
-        console.log("Contact form:", { name, email, message });
-
         form.reset();
         alert("Danke für deine Nachricht! Ich melde mich so schnell wie möglich.");
     });
 }
 
-/* Visitor Counter (localStorage-basiert, später Supabase möglich) */
-
+/* ===========================
+   VISITOR COUNTER
+=========================== */
 function initVisitorCounter() {
     const el = document.getElementById("visit-count");
     if (!el) return;
@@ -233,38 +177,127 @@ function initVisitorCounter() {
     const key = "haigorilla406_visit_count";
     let count = Number(localStorage.getItem(key) || "0");
     count++;
-    localStorage.setItem(key, String(count));
+    localStorage.setItem(key, count);
     el.textContent = count.toString().padStart(3, "0");
 }
 
-/* Footer Socials */
-
+/* ===========================
+   FOOTER SOCIALS
+=========================== */
 function initFooterSocials() {
     const container = document.getElementById("footer-social-container");
     if (!container) return;
 
     const socials = [
-        {
-            label: "GitHub",
-            href: "https://github.com/HaiGorilla406"
-        },
-        {
-            label: "Modrinth",
-            href: "https://modrinth.com/user/AxoSMP"
-        },
-        {
-            label: "Discord",
-            href: "https://discord.com/users/yourid"
-        }
+        { label: "GitHub", href: "https://github.com/HaiGorilla406" },
+        { label: "Modrinth", href: "https://modrinth.com/user/AxoSMP" },
+        { label: "Discord", href: "https://discord.com/users/yourid" }
     ];
 
-    socials.forEach((s) => {
+    socials.forEach(s => {
         const a = document.createElement("a");
         a.href = s.href;
         a.target = "_blank";
-        a.rel = "noreferrer";
         a.textContent = s.label;
         a.className = "footer-link";
         container.appendChild(a);
+    });
+}
+
+/* ===========================
+   LANGUAGE SWITCHER
+=========================== */
+const translations = {
+    en: {
+        "nav.home": "Home",
+        "nav.about": "About",
+        "nav.projects": "Projects",
+        "nav.contact": "Contact",
+        "nav.hireMe": "Hire Me",
+
+        "about.title": "About Me & Services",
+        "about.cat1Title": "👤 Who am I?",
+        "about.cat1Desc": "I'm a 17-year-old developer from Saxony-Anhalt, Germany.",
+        "about.cat2Title": "💻 What I do",
+        "about.cat2Desc": "I create custom Minecraft plugins, backend systems and full-stack applications.",
+        "about.cat3Title": "🎯 Vision",
+        "about.cat3Desc": "Creating fast, modern and visually stunning digital experiences.",
+        "about.cat4Title": "🍿 Hobbies",
+        "about.cat4Desc": "When I'm not coding, I'm usually watching anime.",
+        "about.servicesTitle": "🚀 Custom Minecraft Plugins",
+        "about.servicesDesc": "I create fully custom Minecraft plugins – from QoL features to complex SMP systems.",
+
+        "projects.title": "My Work",
+
+        "contact.title": "Ready for your <span class='accent'>Custom Minecraft Plugin</span>?",
+        "contact.desc": "Do you have an idea for a plugin or want a custom system? Just write me!",
+        "contact.name": "Name",
+        "contact.email": "Email",
+        "contact.message": "Message",
+        "contact.send": "Send Message",
+
+        "footer.rights": "© 2026 HaiGorilla406 DEV. All rights reserved."
+    },
+
+    de: {
+        "nav.home": "Start",
+        "nav.about": "Über mich",
+        "nav.projects": "Projekte",
+        "nav.contact": "Kontakt",
+        "nav.hireMe": "Kontaktieren",
+
+        "about.title": "Über mich & Services",
+        "about.cat1Title": "👤 Wer bin ich?",
+        "about.cat1Desc": "Ich bin ein 17-jähriger Entwickler aus Sachsen-Anhalt, Deutschland.",
+        "about.cat2Title": "💻 Was mache ich?",
+        "about.cat2Desc": "Ich entwickle individuelle Minecraft-Plugins, Backend-Systeme und Full‑Stack‑Anwendungen.",
+        "about.cat3Title": "🎯 Vision",
+        "about.cat3Desc": "Ich erschaffe blitzschnelle, moderne und visuell beeindruckende Web-Erlebnisse.",
+        "about.cat4Title": "🍿 Hobbys",
+        "about.cat4Desc": "Wenn ich nicht codiere, schaue ich meistens Anime.",
+        "about.servicesTitle": "🚀 Individuelle Minecraft Plugins",
+        "about.servicesDesc": "Ich entwickle komplett individuelle Minecraft‑Plugins – von QoL‑Features bis komplexen SMP‑Systemen.",
+
+        "projects.title": "Meine Projekte",
+
+        "contact.title": "Bereit für dein <span class='accent'>Custom Minecraft Plugin</span>?",
+        "contact.desc": "Hast du eine Idee für ein Plugin oder möchtest du ein eigenes System entwickeln lassen? Schreib mir einfach!",
+        "contact.name": "Name",
+        "contact.email": "E-Mail",
+        "contact.message": "Nachricht",
+        "contact.send": "Nachricht senden",
+
+        "footer.rights": "© 2026 HaiGorilla406 DEV. Alle Rechte vorbehalten."
+    }
+};
+
+function applyLanguage(lang) {
+    document.querySelectorAll("[data-translate]").forEach(el => {
+        const key = el.getAttribute("data-translate");
+        if (translations[lang][key]) el.innerHTML = translations[lang][key];
+    });
+
+    document.querySelectorAll("[data-placeholder]").forEach(el => {
+        const key = el.getAttribute("data-placeholder");
+        if (translations[lang][key]) el.placeholder = translations[lang][key];
+    });
+
+    localStorage.setItem("lang", lang);
+}
+
+function initLanguageSwitcher() {
+    const saved = localStorage.getItem("lang") || "en";
+    applyLanguage(saved);
+
+    document.querySelectorAll(".lang-btn").forEach(btn => {
+        btn.classList.toggle("active", btn.dataset.lang === saved);
+
+        btn.addEventListener("click", () => {
+            const lang = btn.dataset.lang;
+            applyLanguage(lang);
+
+            document.querySelectorAll(".lang-btn").forEach(b => b.classList.remove("active"));
+            btn.classList.add("active");
+        });
     });
 }
