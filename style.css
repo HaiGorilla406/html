@@ -1,14 +1,20 @@
 :root {
     --bg-color: #000000;
+    --panel-color: #121212;
     --text-color: #ffffff;
-    --muted-color: #a0a0a0;
-    --accent-color: #E31B23;
-    --accent-glow: rgba(227, 27, 35, 0.4);
+    --muted-color: #b3b3b3;
+
+    --accent-color: #27c93f; /* Grün */
+    --accent-red: #ff4747;
+    --accent-blue: #4f8cff;
+
+    --glow-green: rgba(39, 201, 63, 0.4);
+    --glow-blue: rgba(79, 140, 255, 0.4);
+
     --card-bg: rgba(255, 255, 255, 0.03);
-    --card-border: rgba(255, 255, 255, 0.08);
-    --nav-height: 80px;
-    --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --card-border: rgba(255, 255, 255, 0.05);
 }
+
 
 .scroll-progress {
     position: fixed;
